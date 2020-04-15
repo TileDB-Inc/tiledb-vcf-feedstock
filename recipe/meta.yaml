@@ -1,0 +1,96 @@
+{% set name = "tiledb-vcf" %}
+{% set version = "0.3.3" %}
+{% set sha256 = "710dadd3f62fac2798d006ed422bb12d0bc1aa0f3a7b8d660a86ec3e058ae62f" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  #git_url: https://github.com/TileDB-Inc/TileDB-VCF.git
+  #git_rev: {{ version }}
+  #fn: {{ name }}-{{ version }}.tar.gz
+  #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://github.com/TileDB-Inc/TileDB-VCF/archive/{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  number: 0
+  skip: true  # [win or linux32 or py2k]
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - git
+    - cmake
+    - make
+  run:
+    - htslib >=1.8
+    - tiledb 1.7.7
+  host:
+    - htslib >=1.8
+    - tiledb 1.7.7
+
+outputs:
+  - name: libtiledbvcf
+    version: {{ version }}
+    script: install-libtiledbvcf.sh
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - cmake
+        - make
+      host:
+        - htslib >=1.8
+        - tiledb 1.7.7
+      run:
+        - htslib >=1.8
+        - tiledb 1.7.7
+
+  - name: tiledbvcf-py
+    version: {{ version }}
+    script: build-tiledbvcf-py.sh
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - cmake
+        - make
+        - setuptools
+        - wheel
+      host:
+        - {{ pin_compatible('numpy', lower_bound='1.16') }}
+        - {{ pin_subpackage('libtiledbvcf', exact=True) }}
+        - python
+        - pyarrow >=0.16.*
+        - pybind11
+        - rpdb
+      run:
+        - {{ pin_compatible('numpy', lower_bound='1.16') }}
+        - {{ pin_subpackage('libtiledbvcf', exact=True) }}
+        - python
+        - pyarrow >=0.16.*
+        - pybind11
+    imports:
+      - tiledbvcf
+    test:
+      commands:
+        - python -c "import tiledbvcf"
+
+about:
+  home: http://tiledb.com
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: 'Efficient variant-call data storage and retrieval library using the TileDB storage library.'
+  description: |
+    TileDB-VCF is the python interface to the TileDB-VCF library.
+  doc_url: https://docs.tiledb.com/developer/tiledbvcf/introduction
+  dev_url: https://github.com/TileDB-Inc/TileDB-VCF
+
+extra:
+  recipe-maintainers:
+    - ihnorton
+    - shelnutt2
