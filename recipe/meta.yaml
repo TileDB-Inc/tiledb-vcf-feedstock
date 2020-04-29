@@ -1,6 +1,6 @@
 {% set name = "tiledb-vcf" %}
-{% set version = "0.3.5" %}
-{% set sha256 = "0058dc34268d7d3649d3d558c6ea8d1d5a3b5170543960ddda0e740bc7ee4aa7" %}
+{% set version = "0.4.0" %}
+{% set sha256 = "9bd86b0152f4d2adf7e10d3efc6dd8819b45d598cd66962763292be735382e0a" %}
 
 package:
   name: {{ name }}
@@ -27,10 +27,10 @@ requirements:
     - make
   run:
     - htslib >=1.8
-    - tiledb 1.7.7
+    - tiledb 2.0.*
   host:
     - htslib >=1.8
-    - tiledb 1.7.7
+    - tiledb 2.0.*
 
 outputs:
   - name: libtiledbvcf
@@ -44,10 +44,10 @@ outputs:
         - make
       host:
         - htslib >=1.8
-        - tiledb 1.7.7
+        - tiledb 2.0.*
       run:
         - htslib >=1.8
-        - tiledb 1.7.7
+        - tiledb 2.0.*
 
   - name: tiledbvcf-py
     version: {{ version }}
@@ -58,8 +58,6 @@ outputs:
         - {{ compiler('cxx') }}
         - cmake
         - make
-        - setuptools
-        - wheel
       host:
         - {{ pin_compatible('numpy', lower_bound='1.16') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
@@ -69,6 +67,8 @@ outputs:
         - rpdb
         - wheel
         - setuptools
+        - setuptools_scm
+        - setuptools_scm_git_archive
       run:
         - {{ pin_compatible('numpy', lower_bound='1.16') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
