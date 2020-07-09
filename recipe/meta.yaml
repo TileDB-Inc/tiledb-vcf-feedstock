@@ -48,6 +48,9 @@ outputs:
       run:
         - htslib >=1.8
         - tiledb 2.0.*
+    test:
+      commands:
+        - tiledbvcf version
 
   - name: tiledbvcf-py
     version: {{ version }}
@@ -80,7 +83,7 @@ outputs:
       - tiledbvcf
     test:
       commands:
-        - python -c "import tiledbvcf"
+        - python -c "import tiledbvcf; tiledbvcf.version"
 
 about:
   home: http://tiledb.com
