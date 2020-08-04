@@ -5,7 +5,7 @@ Home: http://tiledb.com
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Efficient variant-call data storage and retrieval library using the TileDB storage library.
 
