@@ -1,6 +1,6 @@
 {% set name = "tiledb-vcf" %}
-{% set version = "0.5.0" %}
-{% set sha256 = "d5a8c9fb7e6fe64b8b4d614d93ed56a432f98ae27f6cd78c830d40e20ccf76e1" %}
+{% set version = "0.5.1" %}
+{% set sha256 = "e39e720b7109080af17aabe07c2ac08c402df8dfed36bdafe3d658b94896f3ce" %}
 
 package:
   name: {{ name }}
@@ -79,6 +79,7 @@ outputs:
         - pyarrow 1.0.*
         - pybind11
         - setuptools
+        - pandas
     imports:
       - tiledbvcf
     test:
