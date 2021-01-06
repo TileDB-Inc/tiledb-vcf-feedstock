@@ -1,6 +1,6 @@
 {% set name = "tiledb-vcf" %}
-{% set version = "0.7.0" %}
-{% set sha256 = "fa2338bedc6807e738bfe6e33fd23f703029245580b4a99a7ff178ee7d0d1eb5" %}
+{% set version = "0.7.1" %}
+{% set sha256 = "3f43ce033cf7e2ce802eec3f607b025f0060688ecc4b8fd79bd052df8bdd04bc" %}
 
 package:
   name: {{ name }}
