@@ -5,9 +5,9 @@ c_compiler:
 c_compiler_version:
 - '11'
 channel_sources:
-- conda-forge,defaults
+- conda-forge,bioconda,defaults
 channel_targets:
-- conda-forge main
+- tiledb main
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
