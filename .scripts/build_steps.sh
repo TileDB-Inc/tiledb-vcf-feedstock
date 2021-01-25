@@ -18,7 +18,7 @@ conda-build:
  root-dir: ${FEEDSTOCK_ROOT}/build_artifacts
 
 CONDARC
-conda config --prepend channels bioconda
+
 conda install --yes --quiet "conda-forge-ci-setup=3" conda-build pip -c conda-forge
 
 # set up the condarc
