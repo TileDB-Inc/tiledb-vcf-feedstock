@@ -1,6 +1,6 @@
 {% set name = "tiledb-vcf" %}
 {% set version = "0.8.6" %}
-{% set sha256 = "8d21faee068e932f9289f6a3699e05c7d1ad50e3c11572b53d2d52f2bed5c7b0" %}
+{% set sha256 = "6b81b076059a1d81eceef83281c74d8bcba826db553be91f4572db2ea47ce9c5" %}
 
 package:
   name: {{ name }}
@@ -15,7 +15,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or linux32 or py2k]
 
 requirements:
@@ -65,7 +65,7 @@ outputs:
         - {{ pin_compatible('numpy', lower_bound='1.16') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
         - python
-        - pyarrow 1.0.*
+        - pyarrow 3.0.*
         - pybind11
         - rpdb
         - wheel
@@ -76,7 +76,7 @@ outputs:
         - {{ pin_compatible('numpy', lower_bound='1.16') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
         - python
-        - pyarrow 1.0.*
+        - pyarrow 3.0.*
         - pybind11
         - setuptools
         - pandas
