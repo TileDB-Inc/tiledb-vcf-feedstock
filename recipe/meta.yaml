@@ -1,6 +1,6 @@
 {% set name = "tiledb-vcf" %}
-{% set version = "0.11.2.1" %}
-{% set sha256 = "8b4ecdf73e39da46e6c94f5219db1181979d7b762517a145cdab75c0a2608652" %}
+{% set version = "0.11.3" %}
+{% set sha256 = "e8edc8a0b516de5bc94feab53a17372f357ee620958eb3d28e51eb47f4557fb6" %}
 
 package:
   name: {{ name }}
@@ -11,7 +11,7 @@ source:
   #git_rev: {{ version }}
   #fn: {{ name }}-{{ version }}.tar.gz
   #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  url: https://github.com/TileDB-Inc/TileDB-VCF/archive/master.tar.gz
+  url: https://github.com/TileDB-Inc/TileDB-VCF/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
