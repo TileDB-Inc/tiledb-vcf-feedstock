@@ -1,4 +1,7 @@
 channel_sources:
-  - conda-forge/label/tiledb_rc,conda-forge,bioconda,defaults
+  - conda-forge/label/tiledb_rc
+  - conda-forge
+  - bioconda
+  - defaults
 channel_targets:
   - tiledb tiledb_rc
