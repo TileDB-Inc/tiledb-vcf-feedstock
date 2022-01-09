@@ -5,3 +5,5 @@ channel_sources:
   - defaults
 channel_targets:
   - tiledb tiledb_rc
+tiledb:
+  - '2.6'
