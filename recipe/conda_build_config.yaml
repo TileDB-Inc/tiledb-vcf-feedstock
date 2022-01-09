@@ -3,4 +3,4 @@ channel_sources:
 channel_targets:
   - tiledb tiledb_rc
 tiledb:
-  - '2.6'
+  - '2.6.0rc1'
