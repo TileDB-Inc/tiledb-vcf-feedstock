@@ -27,7 +27,7 @@ python:
 target_platform:
 - osx-64
 tiledb:
-- '2.6'
+- 2.6.0rc1
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
