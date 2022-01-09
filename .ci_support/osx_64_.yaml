@@ -5,10 +5,7 @@ c_compiler:
 c_compiler_version:
 - '11'
 channel_sources:
-- bioconda
-- conda-forge
-- conda-forge/label/tiledb_rc
-- defaults
+- conda-forge/label/tiledb_rc,conda-forge,bioconda,defaults
 channel_targets:
 - tiledb tiledb_rc
 cxx_compiler:
