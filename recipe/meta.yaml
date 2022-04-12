@@ -15,7 +15,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or linux32 or py2k]
 
 requirements:
@@ -65,7 +65,7 @@ outputs:
         - {{ pin_compatible('numpy', lower_bound='1.16') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
         - python
-        - pyarrow 3.0.*
+        - pyarrow 7.0.*
         - pybind11
         - rpdb
         - wheel
@@ -76,7 +76,7 @@ outputs:
         - {{ pin_compatible('numpy', lower_bound='1.16') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
         - python
-        - pyarrow 3.0.*
+        - pyarrow 7.0.*
         - pybind11
         - setuptools
         - pandas
