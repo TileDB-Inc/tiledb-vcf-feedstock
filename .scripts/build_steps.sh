@@ -5,6 +5,8 @@
 # changes to this script, consider a proposal to conda-smithy so that other feedstocks can also
 # benefit from the improvement.
 
+# -*- mode: jinja-shell -*-
+
 set -xeuo pipefail
 export FEEDSTOCK_ROOT="${FEEDSTOCK_ROOT:-/home/conda/feedstock_root}"
 source ${FEEDSTOCK_ROOT}/.scripts/logging_utils.sh
@@ -25,8 +27,7 @@ conda-build:
  root-dir: ${FEEDSTOCK_ROOT}/build_artifacts
 
 CONDARC
-GET_BOA=boa
-BUILD_CMD=mambabuild
+
 
 mamba install --update-specs --yes --quiet --channel conda-forge \
     conda-build pip boa conda-forge-ci-setup=3
@@ -56,7 +57,7 @@ if [[ "${BUILD_WITH_CONDA_DEBUG:-0}" == 1 ]]; then
     # Drop into an interactive shell
     /bin/bash
 else
-    conda $BUILD_CMD "${RECIPE_ROOT}" -m "${CI_SUPPORT}/${CONFIG}.yaml" \
+    conda mambabuild "${RECIPE_ROOT}" -m "${CI_SUPPORT}/${CONFIG}.yaml" \
         --suppress-variables ${EXTRA_CB_OPTIONS:-} \
         --clobber-file "${CI_SUPPORT}/clobber_${CONFIG}.yaml"
 

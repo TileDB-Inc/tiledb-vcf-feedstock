@@ -1,9 +1,11 @@
 MACOSX_DEPLOYMENT_TARGET:
-- '10.9'
+- '10.14'
+MACOSX_SDK_VERSION:
+- '10.14'
 c_compiler:
 - clang
 c_compiler_version:
-- '11'
+- '12'
 channel_sources:
 - conda-forge,bioconda,defaults
 channel_targets:
@@ -11,7 +13,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '11'
+- '12'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 pin_run_as_build:
