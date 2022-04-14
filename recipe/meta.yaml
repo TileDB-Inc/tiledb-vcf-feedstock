@@ -65,7 +65,7 @@ outputs:
         - {{ pin_compatible('numpy', lower_bound='1.16') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
         - python
-        - pyarrow 7.0.*
+        - pyarrow 6.0.*
         - pybind11
         - rpdb
         - wheel
@@ -76,7 +76,7 @@ outputs:
         - {{ pin_compatible('numpy', lower_bound='1.16') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
         - python
-        - pyarrow 7.0.*
+        - pyarrow 6.0.*
         - pybind11
         - setuptools
         - pandas
