@@ -1,6 +1,6 @@
 {% set name = "tiledb-vcf" %}
-{% set version = "0.15.0" %}
-{% set sha256 = "8bd8c158cd0b80c3fd30e2f0e8225e41d787bc70fa15e7f79b3fd958d69b506a" %}
+{% set version = "0.16.0" %}
+{% set sha256 = "d19963d5febf04175eadf649d1f28c87db7f9f350c16b3b4fbd553b0bc176084" %}
 
 package:
   name: {{ name }}
@@ -27,10 +27,10 @@ requirements:
     - make
   run:
     - htslib >=1.15
-    - tiledb 2.8.*
+    - tiledb 2.9.*
   host:
     - htslib >=1.15
-    - tiledb 2.8.*
+    - tiledb 2.9.*
 
 outputs:
   - name: libtiledbvcf
@@ -44,10 +44,10 @@ outputs:
         - make
       host:
         - htslib >=1.15
-        - tiledb 2.8.*
+        - tiledb 2.9.*
       run:
         - htslib >=1.15
-        - tiledb 2.8.*
+        - tiledb 2.9.*
     test:
       commands:
         - tiledbvcf version
