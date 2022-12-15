@@ -13,6 +13,8 @@ source:
   #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   url: https://github.com/TileDB-Inc/TileDB-VCF/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - 0001-htslib-build.patch
 
 build:
   number: 1
@@ -29,10 +31,8 @@ requirements:
     - automake
   run:
     - tiledb 2.12.*
-    - libcurl
   host:
     - tiledb 2.12.*
-    - libcurl
 outputs:
   - name: libtiledbvcf
     version: {{ version }}
@@ -48,7 +48,6 @@ outputs:
       host:
         - tiledb 2.12.*
         # htslib build requirements
-        - libcurl
         - bzip2
         - xz
         - zlib
@@ -56,7 +55,6 @@ outputs:
       run:
         - tiledb 2.12.*
         # htslib build requirements
-        - libcurl
         - bzip2
         - xz
         - zlib
