@@ -15,7 +15,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or linux32 or py2k]
 
 requirements:
@@ -25,13 +25,16 @@ requirements:
     - git
     - cmake
     - make
+    - autoconf
+    - automake
   run:
-    - htslib >=1.15
     - tiledb 2.12.*
+    - openssl
+    - libcurl
   host:
-    - htslib >=1.15
     - tiledb 2.12.*
-
+    - openssl
+    - libcurl
 outputs:
   - name: libtiledbvcf
     version: {{ version }}
@@ -42,12 +45,26 @@ outputs:
         - {{ compiler('cxx') }}
         - cmake
         - make
+        - autoconf
+        - automake
       host:
-        - htslib >=1.15
         - tiledb 2.12.*
+        # htslib build requirements
+        - libcurl
+        - bzip2
+        - xz
+        - zlib
+        - libdeflate
+        - openssl
       run:
-        - htslib >=1.15
         - tiledb 2.12.*
+        # htslib build requirements
+        - libcurl
+        - bzip2
+        - xz
+        - zlib
+        - libdeflate
+        - openssl
     test:
       commands:
         - tiledbvcf version
