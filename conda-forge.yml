@@ -1,7 +1,6 @@
 channels:
   sources:
     - conda-forge
-    - bioconda
   targets:
     - ["tiledb", "main"]
 github:
