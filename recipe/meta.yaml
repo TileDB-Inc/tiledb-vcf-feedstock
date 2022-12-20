@@ -27,8 +27,8 @@ requirements:
     - git
     - cmake
     - make
-    - autoconf
-    - automake
+    - autoconf  # [not win]
+    - automake  # [not win]
   run:
     - tiledb 2.13.*
   host:
@@ -43,8 +43,8 @@ outputs:
         - {{ compiler('cxx') }}
         - cmake
         - make
-        - autoconf
-        - automake
+        - autoconf  # [not win]
+        - automake  # [not win]
       host:
         - tiledb 2.13.*
         # htslib build requirements
