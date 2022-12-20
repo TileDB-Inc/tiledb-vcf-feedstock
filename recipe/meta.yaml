@@ -18,7 +18,7 @@ source:
 
 build:
   number: 3
-  skip: true  # [win or linux32 or py2k]
+  skip: true  # [linux32 or py2k]
 
 requirements:
   build:
