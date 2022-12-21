@@ -1,6 +1,8 @@
 {% set name = "tiledb-vcf" %}
 {% set version = "0.21.0" %}
 {% set sha256 = "b7e24ff54a158905bdbab300bd6633f210e00f20e66f7cfa6de2fc1259e67962" %}
+{% set posix = 'm2-' if win else '' %}
+{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: {{ name }}
@@ -26,12 +28,23 @@ outputs:
     script: install-libtiledbvcf.sh
     requirements:
       build:
+        - {{ compiler('c') }}              # [not win]
+        - {{ compiler('m2w64_c') }}        # [win]
+        - {{ compiler('cxx') }}            # [not win]
+        - {{ compiler('m2w64_cxx') }}      # [win]
+        - {{ posix }}filesystem        # [win]
+        - {{ posix }}sed               # [win]
+        - {{ posix }}grep              # [win]
+        - {{ posix }}autoconf
+        - {{ posix }}automake          # [not win]
+        - {{ posix }}automake-wrapper  # [win]
+        - {{ posix }}pkg-config
+        - {{ posix }}make
+        - {{ posix }}coreutils         # [win]
+        - {{ posix }}zip               # [win]
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - cmake
-        - make
-        - autoconf  # [not win]
-        - automake  # [not win]
       host:
         - tiledb 2.13.*
         # htslib build requirements
@@ -46,6 +59,7 @@ outputs:
         - xz
         - zlib
         - libdeflate
+        - {{ native }}gcc-libs         # [win]
     test:
       commands:
         - tiledbvcf version
@@ -55,10 +69,23 @@ outputs:
     script: build-tiledbvcf-py.sh
     requirements:
       build:
+        - {{ compiler('c') }}              # [not win]
+        - {{ compiler('m2w64_c') }}        # [win]
+        - {{ compiler('cxx') }}            # [not win]
+        - {{ compiler('m2w64_cxx') }}      # [win]
+        - {{ posix }}filesystem        # [win]
+        - {{ posix }}sed               # [win]
+        - {{ posix }}grep              # [win]
+        - {{ posix }}autoconf
+        - {{ posix }}automake          # [not win]
+        - {{ posix }}automake-wrapper  # [win]
+        - {{ posix }}pkg-config
+        - {{ posix }}make
+        - {{ posix }}coreutils         # [win]
+        - {{ posix }}zip               # [win]
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - cmake
-        - make
       host:
         - {{ pin_compatible('numpy', lower_bound='1.16') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
@@ -78,6 +105,7 @@ outputs:
         - pybind11
         - setuptools
         - pandas
+        - {{ native }}gcc-libs         # [win]
     imports:
       - tiledbvcf
     test:
