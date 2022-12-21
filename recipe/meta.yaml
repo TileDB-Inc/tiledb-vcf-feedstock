@@ -20,19 +20,6 @@ build:
   number: 3
   skip: true  # [linux32 or py2k]
 
-requirements:
-  build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-    - git
-    - cmake
-    - make
-    - autoconf  # [not win]
-    - automake  # [not win]
-  run:
-    - tiledb 2.13.*
-  host:
-    - tiledb 2.13.*
 outputs:
   - name: libtiledbvcf
     version: {{ version }}
