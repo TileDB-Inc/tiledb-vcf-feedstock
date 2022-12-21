@@ -28,10 +28,8 @@ outputs:
     script: install-libtiledbvcf.sh
     requirements:
       build:
-        - {{ compiler('c') }}              # [not win]
-        - {{ compiler('m2w64_c') }}        # [win]
-        - {{ compiler('cxx') }}            # [not win]
-        - {{ compiler('m2w64_cxx') }}      # [win]
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
         - {{ posix }}filesystem        # [win]
         - {{ posix }}sed               # [win]
         - {{ posix }}grep              # [win]
@@ -69,10 +67,8 @@ outputs:
     script: build-tiledbvcf-py.sh
     requirements:
       build:
-        - {{ compiler('c') }}              # [not win]
-        - {{ compiler('m2w64_c') }}        # [win]
-        - {{ compiler('cxx') }}            # [not win]
-        - {{ compiler('m2w64_cxx') }}      # [win]
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
         - {{ posix }}filesystem        # [win]
         - {{ posix }}sed               # [win]
         - {{ posix }}grep              # [win]
