@@ -16,14 +16,10 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '14'
-libcurl:
-- '7'
 libdeflate:
 - '1.14'
 macos_machine:
 - x86_64-apple-darwin13.4.0
-openssl:
-- 1.1.1
 pin_run_as_build:
   python:
     min_pin: x.x
