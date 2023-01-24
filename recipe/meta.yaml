@@ -1,6 +1,6 @@
 {% set name = "tiledb-vcf" %}
-{% set version = "0.21.0" %}
-{% set sha256 = "b7e24ff54a158905bdbab300bd6633f210e00f20e66f7cfa6de2fc1259e67962" %}
+{% set version = "0.22.0" %}
+{% set sha256 = "edf99c258a9fe24093dd202d7afffe9df72c70a4c9a8bf738f7c28d0ee631847" %}
 
 package:
   name: {{ name }}
@@ -17,7 +17,7 @@ source:
     - 0001-htslib-build.patch
 
 build:
-  number: 4
+  number: 0
   skip: true  # [win or linux32 or py2k]
 
 requirements:
@@ -30,9 +30,9 @@ requirements:
     - autoconf
     - automake
   run:
-    - tiledb 2.13.*
+    - tiledb 2.14.*
   host:
-    - tiledb 2.13.*
+    - tiledb 2.14.*
 outputs:
   - name: libtiledbvcf
     version: {{ version }}
@@ -46,14 +46,14 @@ outputs:
         - autoconf
         - automake
       host:
-        - tiledb 2.13.*
+        - tiledb 2.14.*
         # htslib build requirements
         - bzip2
         - xz
         - zlib
         - libdeflate
       run:
-        - tiledb 2.13.*
+        - tiledb 2.14.*
         # htslib build requirements
         - bzip2
         - xz
