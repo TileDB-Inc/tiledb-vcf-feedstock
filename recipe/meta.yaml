@@ -1,6 +1,6 @@
 {% set name = "tiledb-vcf" %}
 {% set version = "0.22.0" %}
-{% set sha256 = "edf99c258a9fe24093dd202d7afffe9df72c70a4c9a8bf738f7c28d0ee631847" %}
+{% set sha256 = "27f1fd0a88f29a5863263e0980a28d273c9ed2a99a6292bcd329a0e3a20c3517" %}
 
 package:
   name: {{ name }}
@@ -17,7 +17,7 @@ source:
     - 0001-htslib-build.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or linux32 or py2k]
 
 requirements:
@@ -73,7 +73,7 @@ outputs:
         - cmake
         - make
       host:
-        - {{ pin_compatible('numpy', lower_bound='1.16') }}
+        - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.24') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
         - python
         - pyarrow 9.0.*
@@ -84,7 +84,7 @@ outputs:
         - setuptools_scm 6.0.1
         - setuptools_scm_git_archive
       run:
-        - {{ pin_compatible('numpy', lower_bound='1.16') }}
+        - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.24') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
         - python
         - pyarrow 9.0.*
