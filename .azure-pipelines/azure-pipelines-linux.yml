@@ -20,6 +20,14 @@ jobs:
         CONFIG: linux_64_libdeflate1.14
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_libdeflate1.16:
+        CONFIG: linux_64_libdeflate1.16
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_libdeflate1.17:
+        CONFIG: linux_64_libdeflate1.17
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
   timeoutInMinutes: 360
 
   steps:

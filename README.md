@@ -55,6 +55,20 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+              <td>linux_64_libdeflate1.16</td>
+              <td>
+                <a href="https://dev.azure.com/TileDB-Inc/feedstock-builds/_build/latest?definitionId=&branchName=master">
+                  <img src="https://dev.azure.com/TileDB-Inc/feedstock-builds/_apis/build/status/tiledb-vcf-feedstock?branchName=master&jobName=linux&configuration=linux%20linux_64_libdeflate1.16" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_libdeflate1.17</td>
+              <td>
+                <a href="https://dev.azure.com/TileDB-Inc/feedstock-builds/_build/latest?definitionId=&branchName=master">
+                  <img src="https://dev.azure.com/TileDB-Inc/feedstock-builds/_apis/build/status/tiledb-vcf-feedstock?branchName=master&jobName=linux&configuration=linux%20linux_64_libdeflate1.17" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
               <td>osx_64_libdeflate1.12</td>
               <td>
                 <a href="https://dev.azure.com/TileDB-Inc/feedstock-builds/_build/latest?definitionId=&branchName=master">
@@ -73,6 +87,20 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/TileDB-Inc/feedstock-builds/_build/latest?definitionId=&branchName=master">
                   <img src="https://dev.azure.com/TileDB-Inc/feedstock-builds/_apis/build/status/tiledb-vcf-feedstock?branchName=master&jobName=osx&configuration=osx%20osx_64_libdeflate1.14" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libdeflate1.16</td>
+              <td>
+                <a href="https://dev.azure.com/TileDB-Inc/feedstock-builds/_build/latest?definitionId=&branchName=master">
+                  <img src="https://dev.azure.com/TileDB-Inc/feedstock-builds/_apis/build/status/tiledb-vcf-feedstock?branchName=master&jobName=osx&configuration=osx%20osx_64_libdeflate1.16" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_libdeflate1.17</td>
+              <td>
+                <a href="https://dev.azure.com/TileDB-Inc/feedstock-builds/_build/latest?definitionId=&branchName=master">
+                  <img src="https://dev.azure.com/TileDB-Inc/feedstock-builds/_apis/build/status/tiledb-vcf-feedstock?branchName=master&jobName=osx&configuration=osx%20osx_64_libdeflate1.17" alt="variant">
                 </a>
               </td>
             </tr>
