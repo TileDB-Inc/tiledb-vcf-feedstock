@@ -1,6 +1,6 @@
 {% set name = "tiledb-vcf" %}
-{% set version = "0.22.0" %}
-{% set sha256 = "6f9645f26901b75a4f58b558aeffbdba964516df5e62778dbe680ec7c701f029" %}
+{% set version = "0.22.2" %}
+{% set sha256 = "902f32749b42358bd767881430bbc66835798f0c833afb8e5e7ff16cd7f1f3b0" %}
 
 package:
   name: {{ name }}
@@ -17,7 +17,7 @@ source:
     - 0001-htslib-build.patch
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win or linux32 or py2k]
 
 requirements:
