@@ -17,7 +17,7 @@ source:
     - 0001-htslib-build.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or linux32 or py2k]
 
 requirements:
@@ -73,8 +73,8 @@ outputs:
         - cmake
         - make
       host:
-        - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.24') }}
-        - {{ pin_subpackage('libtiledbvcf', exact=True) }}
+        - numpy
+        - libtiledbvcf {{ version }}
         - python
         - pyarrow 9.0.*
         - pybind11
