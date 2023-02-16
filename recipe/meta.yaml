@@ -7,40 +7,24 @@ package:
   version: {{ version }}
 
 source:
-  #git_url: https://github.com/TileDB-Inc/TileDB-VCF.git
-  #git_rev: {{ version }}
-  #fn: {{ name }}-{{ version }}.tar.gz
-  #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   url: https://github.com/TileDB-Inc/TileDB-VCF/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
     - 0001-htslib-build.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win or linux32 or py2k]
 
-requirements:
-  build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-    - git
-    - cmake
-    - make
-    - autoconf
-    - automake
-  run:
-    - tiledb 2.14.*
-  host:
-    - tiledb 2.14.*
 outputs:
   - name: libtiledbvcf
     version: {{ version }}
-    script: install-libtiledbvcf.sh
+    script: build-libtiledbvcf.sh
     requirements:
       build:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
+        - git
         - cmake
         - make
         - autoconf

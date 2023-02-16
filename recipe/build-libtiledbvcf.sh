@@ -3,6 +3,7 @@
 set -exo pipefail
 
 mkdir libtiledbvcf-build && cd libtiledbvcf-build
+
 cmake \
   -DCMAKE_INSTALL_PREFIX:PATH="${PREFIX}" \
   -DOVERRIDE_INSTALL_PREFIX=OFF \
@@ -11,3 +12,5 @@ cmake \
   ../libtiledbvcf
 
 make -j ${CPU_COUNT}
+
+make install-libtiledbvcf
