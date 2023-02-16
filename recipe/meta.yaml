@@ -80,6 +80,12 @@ outputs:
     test:
       commands:
         - python -c "import tiledbvcf; tiledbvcf.version"
+        # verify libhts is linked
+        - ldd ${PREFIX}/lib/libtiledbvcf.so | grep libhts  # [linux]
+        - otool -L ${PREFIX}/lib/libtiledbvcf.dylib | grep libhts  # [osx]
+        # verify libdeflate is linked to libhts
+        - ldd ${PREFIX}/lib/libhts.so.* | grep libdeflate  # [linux]
+        - otool -L ${PREFIX}/lib/libhts.*.dylib | grep libdeflate  # [osx]
 
 about:
   home: http://tiledb.com
