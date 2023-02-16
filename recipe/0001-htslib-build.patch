@@ -7,7 +7,7 @@ index 3e5b4e7..3688982 100644
            ${AUTORECONF} -i
          COMMAND
 -          ./configure --prefix=${EP_INSTALL_PREFIX} LDFLAGS=${EXTRA_LDFLAGS} CFLAGS=${CFLAGS}
-+          ./configure --disable-libcurl --disable-gcs --disable-aws --prefix=${EP_INSTALL_PREFIX} LDFLAGS=${EXTRA_LDFLAGS} CFLAGS=${CFLAGS}
++          ./configure --with-libdeflate --disable-libcurl --disable-gcs --disable-aws --prefix=${EP_INSTALL_PREFIX} LDFLAGS=${EXTRA_LDFLAGS} CFLAGS=${CFLAGS}
        BUILD_COMMAND
          $(MAKE)
        INSTALL_COMMAND
