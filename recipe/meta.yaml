@@ -9,11 +9,9 @@ package:
 source:
   url: https://github.com/TileDB-Inc/TileDB-VCF/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    - 0001-htslib-build.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win or linux32 or py2k]
 
 outputs:
@@ -27,25 +25,21 @@ outputs:
         - git
         - cmake
         - make
-        - autoconf
-        - automake
       host:
         - tiledb 2.14.*
-        # htslib build requirements
-        - bzip2
-        - xz
-        - zlib
-        - libdeflate
+        - htslib >=1.15
       run:
         - tiledb 2.14.*
-        # htslib build requirements
-        - bzip2
-        - xz
-        - zlib
-        - libdeflate
+        - htslib >=1.15
     test:
       commands:
         - tiledbvcf version
+        # verify libhts is linked
+        - ldd ${PREFIX}/lib/libtiledbvcf.so | grep libhts  # [linux]
+        - otool -L ${PREFIX}/lib/libtiledbvcf.dylib | grep libhts  # [osx]
+        # verify libdeflate is linked to libhts
+        - ldd ${PREFIX}/lib/libhts.so.* | grep libdeflate  # [linux]
+        - otool -L ${PREFIX}/lib/libhts.*.dylib | grep libdeflate  # [osx]
 
   - name: tiledbvcf-py
     version: {{ version }}
