@@ -3,7 +3,7 @@ MACOSX_SDK_VERSION:  # [osx and x86_64]
 MACOSX_DEPLOYMENT_TARGET:  # [osx and x86_64]
   - "10.14"                # [osx and x86_64]
 channel_sources:
-  - conda-forge,defaults
+  - conda-forge,tiledb
 channel_targets:
   - tiledb main
 numpy:
@@ -21,9 +21,3 @@ python_impl:
   - cpython
   - cpython
   - cpython
-libdeflate:
-  - 1.12
-  - 1.13
-  - 1.14
-  - 1.16
-  - 1.17

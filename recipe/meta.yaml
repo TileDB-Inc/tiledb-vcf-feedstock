@@ -9,11 +9,9 @@ package:
 source:
   url: https://github.com/TileDB-Inc/TileDB-VCF/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    - 0001-htslib-build.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win or linux32 or py2k]
 
 outputs:
@@ -27,25 +25,25 @@ outputs:
         - git
         - cmake
         - make
-        - autoconf
-        - automake
       host:
         - tiledb 2.14.*
-        # htslib build requirements
-        - bzip2
-        - xz
-        - zlib
-        - libdeflate
+        - htslib >=1.15
       run:
         - tiledb 2.14.*
-        # htslib build requirements
-        - bzip2
-        - xz
-        - zlib
-        - libdeflate
+        - htslib >=1.15
     test:
+      files:
+        - test-cli.sh
       commands:
         - tiledbvcf version
+        # verify libhts is linked
+        - ldd ${PREFIX}/lib/libtiledbvcf.so | grep libhts  # [linux]
+        - otool -L ${PREFIX}/lib/libtiledbvcf.dylib | grep libhts  # [osx]
+        # verify libdeflate is linked to libhts
+        - ldd ${PREFIX}/lib/libhts.so.* | grep libdeflate  # [linux]
+        - otool -L ${PREFIX}/lib/libhts.*.dylib | grep libdeflate  # [osx]
+        - tiledbvcf create --uri /tmp/test-tiledbvcf-conda
+        - bash test-cli.sh
 
   - name: tiledbvcf-py
     version: {{ version }}
@@ -78,8 +76,11 @@ outputs:
     imports:
       - tiledbvcf
     test:
+      files:
+        - test-api.py
       commands:
         - python -c "import tiledbvcf; tiledbvcf.version"
+        - python test-api.py
 
 about:
   home: http://tiledb.com

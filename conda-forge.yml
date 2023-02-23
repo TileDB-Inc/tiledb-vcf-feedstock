@@ -1,6 +1,6 @@
+# - only affects README installation instructions
+# - edit recipe/conda_build_config.yaml to affect build
 channels:
-  sources:
-    - conda-forge
   targets:
     - ["tiledb", "main"]
 github:
