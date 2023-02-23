@@ -32,6 +32,8 @@ outputs:
         - tiledb 2.14.*
         - htslib >=1.15
     test:
+      files:
+        - test-cli.sh
       commands:
         - tiledbvcf version
         # verify libhts is linked
@@ -40,6 +42,8 @@ outputs:
         # verify libdeflate is linked to libhts
         - ldd ${PREFIX}/lib/libhts.so.* | grep libdeflate  # [linux]
         - otool -L ${PREFIX}/lib/libhts.*.dylib | grep libdeflate  # [osx]
+        - tiledbvcf create --uri /tmp/test-tiledbvcf-conda
+        - bash test-cli.sh
 
   - name: tiledbvcf-py
     version: {{ version }}
@@ -72,8 +76,11 @@ outputs:
     imports:
       - tiledbvcf
     test:
+      files:
+        - test-api.py
       commands:
         - python -c "import tiledbvcf; tiledbvcf.version"
+        - python test-api.py
 
 about:
   home: http://tiledb.com
