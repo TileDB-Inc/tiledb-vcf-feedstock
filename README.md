@@ -1,11 +1,11 @@
-About tiledb-vcf
-================
+About tiledb-vcf-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/TileDB-Inc/tiledb-vcf-feedstock/blob/master/LICENSE.txt)
 
 Home: http://tiledb.com
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/TileDB-Inc/tiledb-vcf-feedstock/blob/master/LICENSE.txt)
 
 Summary: Efficient variant-call data storage and retrieval library using the TileDB storage library.
 

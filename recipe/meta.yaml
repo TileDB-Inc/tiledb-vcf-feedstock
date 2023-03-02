@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 3
+  number: 4
   skip: true  # [win or linux32 or py2k]
 
 outputs:
@@ -50,19 +50,15 @@ outputs:
     script: build-tiledbvcf-py.sh
     requirements:
       build:
-        - {{ compiler('c') }}
         - {{ compiler('cxx') }}
-        - cmake
-        - make
       host:
         - numpy
         - libtiledbvcf {{ version }}
         - python
         - pyarrow 9.0.*
-        - pybind11
-        - rpdb
-        - wheel
-        - setuptools
+        - pybind11 >=2.5
+        - wheel >=0.30
+        - setuptools >=18.0
         - setuptools_scm 6.0.1
         - setuptools_scm_git_archive
       run:
@@ -70,8 +66,6 @@ outputs:
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
         - python
         - pyarrow 9.0.*
-        - pybind11
-        - setuptools
         - pandas
     imports:
       - tiledbvcf
