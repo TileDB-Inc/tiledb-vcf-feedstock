@@ -1,6 +1,6 @@
 {% set name = "tiledb-vcf" %}
 {% set version = "0.22.2" %}
-{% set sha256 = "902f32749b42358bd767881430bbc66835798f0c833afb8e5e7ff16cd7f1f3b0" %}
+{% set sha256 = "72e1c108a691be000768e07a05c599a7b804154df96e8a2d1056a969fb1dc23b" %}
 
 package:
   name: {{ name }}
@@ -61,6 +61,7 @@ outputs:
         - setuptools >=18.0
         - setuptools_scm 6.0.1
         - setuptools_scm_git_archive
+        - fsspec<2023.3.0
       run:
         - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.24') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
