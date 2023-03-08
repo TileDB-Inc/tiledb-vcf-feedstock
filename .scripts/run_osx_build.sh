@@ -77,9 +77,5 @@ else
 
     ( startgroup "Uploading packages" ) 2> /dev/null
 
-    if [[ "${UPLOAD_PACKAGES}" != "False" ]] && [[ "${IS_PR_BUILD}" == "False" ]]; then
-      upload_package  ./ ./recipe ./.ci_support/${CONFIG}.yaml
-    fi
-
     ( endgroup "Uploading packages" ) 2> /dev/null
 fi

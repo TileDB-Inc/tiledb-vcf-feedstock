@@ -74,7 +74,7 @@ fi
 
 ( startgroup "Start Docker" ) 2> /dev/null
 
-export UPLOAD_PACKAGES="${UPLOAD_PACKAGES:-True}"
+export UPLOAD_PACKAGES=False
 export IS_PR_BUILD="${IS_PR_BUILD:-False}"
 docker pull "${DOCKER_IMAGE}"
 docker run ${DOCKER_RUN_ARGS} \

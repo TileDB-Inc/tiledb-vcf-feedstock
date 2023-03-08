@@ -10,7 +10,7 @@ jobs:
     matrix:
       linux_64_:
         CONFIG: linux_64_
-        UPLOAD_PACKAGES: 'True'
+        UPLOAD_PACKAGES: 'false'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
   timeoutInMinutes: 360
 
