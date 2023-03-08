@@ -1,6 +1,6 @@
 {% set name = "tiledb-vcf" %}
-{% set version = "0.22.2" %}
-{% set sha256 = "902f32749b42358bd767881430bbc66835798f0c833afb8e5e7ff16cd7f1f3b0" %}
+{% set version = "0.23.0" %}
+{% set sha256 = "5772836d26221674d0c6fea7970a35ab2f7a2e972081c40fb1de026b7f936b0e" %}
 
 package:
   name: {{ name }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 4
+  number: 0
   skip: true  # [win or linux32 or py2k]
 
 outputs:
@@ -26,10 +26,10 @@ outputs:
         - cmake
         - make
       host:
-        - tiledb 2.14.*
+        - tiledb 2.15.*
         - htslib >=1.15
       run:
-        - tiledb 2.14.*
+        - tiledb 2.15.*
         - htslib >=1.15
     test:
       files:
