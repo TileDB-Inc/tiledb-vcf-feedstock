@@ -49,36 +49,38 @@ outputs:
         - tiledbvcf create --uri %SRC_DIR%\test-tiledbvcf-conda  # [win]
         - bash test-cli.sh  # [not win]
 
-  - name: tiledbvcf-py  # [not win]
-    version: {{ version }}  # [not win]
-    script: build-tiledbvcf-py.sh  # [not win]
-    requirements:  # [not win]
-      build:  # [not win]
-        - {{ compiler('cxx') }}  # [not win]
-      host:  # [not win]
-        - numpy  # [not win]
-        - libtiledbvcf {{ version }}  # [not win]
-        - python  # [not win]
-        - pyarrow 9.0.*  # [not win]
-        - pybind11 >=2.5  # [not win]
-        - wheel >=0.30  # [not win]
-        - setuptools >=18.0  # [not win]
-        - setuptools_scm 6.0.1  # [not win]
-        - setuptools_scm_git_archive  # [not win]
-      run:  # [not win]
-        - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.24') }}  # [not win]
-        - {{ pin_subpackage('libtiledbvcf', exact=True) }}  # [not win]
-        - python  # [not win]
-        - pyarrow 9.0.*  # [not win]
-        - pandas  # [not win]
-    imports:  # [not win]
-      - tiledbvcf  # [not win]
-    test:  # [not win]
-      files:  # [not win]
-        - test-api.py  # [not win]
-      commands:  # [not win]
-        - python -c "import tiledbvcf; tiledbvcf.version"  # [not win]
-        - python test-api.py  # [not win]
+{% if not win %}
+  - name: tiledbvcf-py
+    version: {{ version }}
+    script: build-tiledbvcf-py.sh
+    requirements:
+      build:
+        - {{ compiler('cxx') }}
+      host:
+        - numpy
+        - libtiledbvcf {{ version }}
+        - python
+        - pyarrow 9.0.*
+        - pybind11 >=2.5
+        - wheel >=0.30
+        - setuptools >=18.0
+        - setuptools_scm 6.0.1
+        - setuptools_scm_git_archive
+      run:
+        - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.24') }}
+        - {{ pin_subpackage('libtiledbvcf', exact=True) }}
+        - python
+        - pyarrow 9.0.*
+        - pandas
+    imports:
+      - tiledbvcf
+    test:
+      files:
+        - test-api.py
+      commands:
+        - python -c "import tiledbvcf; tiledbvcf.version"
+        - python test-api.py
+{% endif %}
 
 about:
   home: http://tiledb.com
