@@ -47,6 +47,13 @@ Current build status
                   <img src="https://dev.azure.com/TileDB-Inc/feedstock-builds/_apis/build/status/tiledb-vcf-feedstock?branchName=master&jobName=osx&configuration=osx%20osx_64_" alt="variant">
                 </a>
               </td>
+            </tr><tr>
+              <td>win_64</td>
+              <td>
+                <a href="https://dev.azure.com/TileDB-Inc/feedstock-builds/_build/latest?definitionId=&branchName=master">
+                  <img src="https://dev.azure.com/TileDB-Inc/feedstock-builds/_apis/build/status/tiledb-vcf-feedstock?branchName=master&jobName=win&configuration=win%20win_64_" alt="variant">
+                </a>
+              </td>
             </tr>
           </tbody>
         </table>
