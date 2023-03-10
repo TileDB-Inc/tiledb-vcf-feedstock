@@ -12,28 +12,31 @@ source:
 
 build:
   number: 0
-  skip: true  # [win or linux32 or py2k]
+  skip: true  # [linux32 or py2k]
 
 outputs:
   - name: libtiledbvcf
     version: {{ version }}
-    script: build-libtiledbvcf.sh
+    script: build-libtiledbvcf.sh  # [not win]
+    script: build-libtiledbvcf.bat  # [win]
     requirements:
       build:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - git
         - cmake
-        - make
+        - make  # [not win]
       host:
+        - htslib >=1.15  # [not win]
+        - m2w64-htslib >=1.15  # [win]
         - tiledb 2.15.*
-        - htslib >=1.15
       run:
+        - htslib >=1.15  # [not win]
+        - m2w64-htslib >=1.15  # [win]
         - tiledb 2.15.*
-        - htslib >=1.15
     test:
-      files:
-        - test-cli.sh
+      files:  # [not win]
+        - test-cli.sh  # [not win]
       commands:
         - tiledbvcf version
         # verify libhts is linked
@@ -42,9 +45,11 @@ outputs:
         # verify libdeflate is linked to libhts
         - ldd ${PREFIX}/lib/libhts.so.* | grep libdeflate  # [linux]
         - otool -L ${PREFIX}/lib/libhts.*.dylib | grep libdeflate  # [osx]
-        - tiledbvcf create --uri /tmp/test-tiledbvcf-conda
-        - bash test-cli.sh
+        - tiledbvcf create --uri /tmp/test-tiledbvcf-conda  # [not win]
+        - tiledbvcf create --uri %SRC_DIR%\test-tiledbvcf-conda  # [win]
+        - bash test-cli.sh  # [not win]
 
+{% if not win %}
   - name: tiledbvcf-py
     version: {{ version }}
     script: build-tiledbvcf-py.sh
@@ -75,6 +80,7 @@ outputs:
       commands:
         - python -c "import tiledbvcf; tiledbvcf.version"
         - python test-api.py
+{% endif %}
 
 about:
   home: http://tiledb.com
