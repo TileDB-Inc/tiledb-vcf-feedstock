@@ -1,6 +1,6 @@
 {% set name = "tiledb-vcf" %}
 {% set version = "0.23.0" %}
-{% set sha256 = "5772836d26221674d0c6fea7970a35ab2f7a2e972081c40fb1de026b7f936b0e" %}
+{% set sha256 = "ac01357ed1f793fe96f728e4abb4965c7303918510cec38fda1ea5ef5ad47643" %}
 
 package:
   name: {{ name }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [linux32 or py2k]
 
 outputs:
@@ -56,6 +56,11 @@ outputs:
     requirements:
       build:
         - {{ compiler('cxx') }}
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+        - pybind11                               # [build_platform != target_platform]
+        - pyarrow 9.0.*                          # [build_platform != target_platform]
+        - numpy                                  # [build_platform != target_platform]
       host:
         - numpy
         - libtiledbvcf {{ version }}
