@@ -7,17 +7,17 @@ channel_sources:
 channel_targets:
   - tiledb main
 numpy:
-  - 1.20   # [not (osx and arm64)]
+  - 1.20   # [not (osx and arm64) and not win]
   - 1.20
   - 1.20
   - 1.21
 python:
-  - 3.7.* *_cpython   # [not (osx and arm64)]
+  - 3.7.* *_cpython   # [not (osx and arm64) and not win]
   - 3.8.* *_cpython
   - 3.9.* *_cpython
   - 3.10.* *_cpython
 python_impl:
-  - cpython   # [not (osx and arm64)]
+  - cpython   # [not (osx and arm64) and not win]
   - cpython
   - cpython
   - cpython
