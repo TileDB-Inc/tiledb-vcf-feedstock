@@ -49,10 +49,10 @@ outputs:
         - tiledbvcf create --uri %SRC_DIR%\test-tiledbvcf-conda  # [win]
         - bash test-cli.sh  # [not win]
 
-{% if not win %}
   - name: tiledbvcf-py
     version: {{ version }}
-    script: build-tiledbvcf-py.sh
+    script: build-tiledbvcf-py.sh  # [not win]
+    script: build-tiledbvcf-py.bat  # [win]
     requirements:
       build:
         - {{ compiler('cxx') }}
@@ -85,7 +85,6 @@ outputs:
       commands:
         - python -c "import tiledbvcf; tiledbvcf.version"
         - python test-api.py
-{% endif %}
 
 about:
   home: http://tiledb.com
