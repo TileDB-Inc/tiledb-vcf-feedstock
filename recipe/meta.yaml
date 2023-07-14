@@ -29,11 +29,11 @@ outputs:
       host:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
-        - tiledb 2.15.*
+        - tiledb 2.16.*
       run:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
-        - tiledb 2.15.*
+        - tiledb 2.16.*
     test:
       files:  # [not win]
         - test-cli.sh  # [not win]
