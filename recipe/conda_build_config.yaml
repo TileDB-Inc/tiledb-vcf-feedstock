@@ -21,3 +21,10 @@ python_impl:
   - cpython
   - cpython
   - cpython
+pyarrow:
+  - 9.0
+  - 10.0  # [py>=3.8]
+  - 11.0  # [py>=3.8]
+pin_run_as_build:
+  pyarrow:
+    max_pin: x.x
