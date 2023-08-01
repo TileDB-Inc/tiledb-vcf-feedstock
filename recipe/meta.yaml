@@ -65,7 +65,8 @@ outputs:
         - numpy
         - libtiledbvcf {{ version }}
         - python
-        - pyarrow
+        - pyarrow 9.0  # [py<=37]
+        - pyarrow {{ pyarrow }}  # [py>=38]
         - pybind11 >=2.5
         - wheel >=0.30
         - setuptools >=18.0
