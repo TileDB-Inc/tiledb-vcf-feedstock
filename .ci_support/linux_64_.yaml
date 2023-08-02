@@ -17,6 +17,8 @@ docker_image:
 numpy:
 - '1.21'
 - '1.21'
+- '1.21'
+- '1.21'
 pin_run_as_build:
   pyarrow:
     min_pin: x.x.x
@@ -25,12 +27,13 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 pyarrow:
-- 10.0.1
 - 11.0.0
 - 9.0.0
 python:
 - 3.10.* *_cpython
 - 3.7.* *_cpython
+- 3.8.* *_cpython
+- 3.9.* *_cpython
 target_platform:
 - linux-64
 zip_keys:

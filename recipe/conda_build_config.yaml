@@ -9,15 +9,20 @@ channel_targets:
 numpy:
   - 1.21   # [not (osx and arm64) and not win]
   - 1.21
+  - 1.21
+  - 1.21
 python:
   - 3.7.* *_cpython   # [not (osx and arm64) and not win]
+  - 3.8.* *_cpython
+  - 3.9.* *_cpython
   - 3.10.* *_cpython
 python_impl:
   - cpython   # [not (osx and arm64) and not win]
   - cpython
+  - cpython
+  - cpython
 pyarrow:
   - 9.0.0
-  - 10.0.1
   - 11.0.0
 pin_run_as_build:
   pyarrow:

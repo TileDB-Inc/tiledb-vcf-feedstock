@@ -76,7 +76,7 @@ outputs:
         - setuptools_scm 6.0.1
         - setuptools_scm_git_archive
       run:
-        - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.22') }}
+        - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.24') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
         - python
         - {{ pin_compatible('pyarrow', max_pin='x.x.x') }}
