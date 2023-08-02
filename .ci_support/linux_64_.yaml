@@ -21,7 +21,7 @@ libarrow:
 - 9.0.0
 numpy:
 - '1.21'
-- '1.20'
+- '1.21'
 pin_run_as_build:
   libarrow:
     min_pin: x.x.x
