@@ -85,6 +85,9 @@ outputs:
     imports:
       - tiledbvcf
     test:
+      requires:
+        - pyarrow 9.0  # [py<=37]
+        - pyarrow {{ pyarrow }}  # [py>=38]
       files:
         - test-api.py
       commands:
