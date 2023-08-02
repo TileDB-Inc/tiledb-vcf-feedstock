@@ -13,7 +13,7 @@ source:
     - 0001-Update-python-pybind11-to-use-c-17.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [linux32 or py2k]
 
 outputs:
