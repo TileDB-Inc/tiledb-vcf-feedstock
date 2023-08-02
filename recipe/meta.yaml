@@ -61,25 +61,28 @@ outputs:
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
         - pybind11                               # [build_platform != target_platform]
-        - pyarrow 9.0                            # [py<=37 and build_platform != target_platform]
-        - pyarrow {{ pyarrow }}                  # [py>=38 and build_platform != target_platform]
+        - libarrow 9.0.0                         # [py<=37 and build_platform != target_platform]
+        - libarrow                               # [py>=38 and build_platform != target_platform]
+        - pyarrow                                # [build_platform != target_platform]
         - numpy                                  # [build_platform != target_platform]
       host:
         - numpy
         - libtiledbvcf {{ version }}
         - python
-        - pyarrow 9.0  # [py<=37]
-        - pyarrow {{ pyarrow }}  # [py>=38]
+        - libarrow 9.0.0  # [py<=37]
+        - libarrow  # [py>=38]
+        - pyarrow
         - pybind11 >=2.5
         - wheel >=0.30
         - setuptools >=18.0
         - setuptools_scm 6.0.1
         - setuptools_scm_git_archive
       run:
-        - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.24') }}
+        - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.22') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
         - python
-        - {{ pin_compatible('pyarrow', max_pin='x.x') }}
+        - {{ pin_compatible('libarrow', max_pin='x.x.x') }}
+        - pyarrow
         - pandas
     imports:
       - tiledbvcf
