@@ -24,7 +24,7 @@ python_impl:
 pyarrow:
   - 9.0
   - 10.0
-  #- 11.0
+  - 11.0
 pin_run_as_build:
   pyarrow:
     max_pin: x.x
