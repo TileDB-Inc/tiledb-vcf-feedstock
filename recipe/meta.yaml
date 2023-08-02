@@ -61,8 +61,8 @@ outputs:
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
         - pybind11                               # [build_platform != target_platform]
-        - pyarrow 9.0  # [py<=37]
-        - pyarrow {{ pyarrow }}  # [py>=38]
+        - pyarrow 9.0                            # [py<=37 and build_platform != target_platform]
+        - pyarrow {{ pyarrow }}                  # [py>=38 and build_platform != target_platform]
         - numpy                                  # [build_platform != target_platform]
       host:
         - numpy
