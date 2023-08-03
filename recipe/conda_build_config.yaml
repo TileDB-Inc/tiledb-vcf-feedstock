@@ -23,6 +23,7 @@ python_impl:
   - cpython
 pyarrow:
   - 9.0.0
+  - 10.0.1
   - 11.0.0
 pin_run_as_build:
   pyarrow:
