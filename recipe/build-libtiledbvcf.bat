@@ -19,3 +19,8 @@ if %ERRORLEVEL% neq 0 exit 1
 rem install
 cmake --build . --target install-libtiledbvcf --config Release
 if %ERRORLEVEL% neq 0 exit 1
+
+rem cleanup
+cd ..
+rmdir /s /q libtiledbvcf-build
+if %ERRORLEVEL% neq 0 exit 1
