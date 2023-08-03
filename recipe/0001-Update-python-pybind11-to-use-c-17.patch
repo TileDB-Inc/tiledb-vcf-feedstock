@@ -1,0 +1,33 @@
+From 8ab3191d553a7f1677f4f53576326459a71dfaee Mon Sep 17 00:00:00 2001
+From: Seth Shelnutt <Shelnutt2@gmail.com>
+Date: Thu, 27 Jul 2023 13:33:57 -0400
+Subject: [PATCH] Update python pybind11 to use c++17
+
+---
+ apis/python/setup.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/apis/python/setup.py b/apis/python/setup.py
+index 65d82456..5b5088b3 100644
+--- a/apis/python/setup.py
++++ b/apis/python/setup.py
+@@ -224,14 +224,14 @@ class BuildExtCmd(build_ext):
+ 
+     def build_extensions(self):
+         if sys.platform != "win32":
+-            opts = ["-std=c++11", "-g"]
++            opts = ["-std=c++17", "-g"]
+             if TILEDBVCF_DEBUG_BUILD:
+                 opts.extend(["-O0"])
+             else:
+                 opts.extend(["-O2"])
+         else:  # windows
+             # Note: newer versions of msvc cl may not recognize -std:c++11
+-            opts = ["-std:c++11", "-Zi"]
++            opts = ["-std:c++17", "-Zi"]
+             if TILEDBVCF_DEBUG_BUILD:
+                 opts.extend(["-Od"])
+             else:
+-- 
+2.40.0
+

@@ -14,3 +14,6 @@ cmake \
 make -j ${CPU_COUNT}
 
 make install-libtiledbvcf
+
+# Cleanup
+cd ../ && rm -r libtiledbvcf-build

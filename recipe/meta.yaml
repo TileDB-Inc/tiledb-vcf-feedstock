@@ -1,6 +1,6 @@
 {% set name = "tiledb-vcf" %}
 {% set version = "0.25.0" %}
-{% set sha256 = "1f559d190d8d6a83e33b00df5b273c5f32082b461b0f94a687030d8259b696a9" %}
+{% set sha256 = "0a8054b8d62bbbe7938d9ea3732749aa8abafca708308ccd8735fea5cb90da98" %}
 
 package:
   name: {{ name }}
@@ -9,9 +9,11 @@ package:
 source:
   url: https://github.com/TileDB-Inc/TileDB-VCF/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - 0001-Update-python-pybind11-to-use-c-17.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [linux32 or py2k]
 
 outputs:
@@ -59,13 +61,15 @@ outputs:
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
         - pybind11                               # [build_platform != target_platform]
-        - pyarrow 9.0.*                          # [build_platform != target_platform]
+        - pyarrow 9.0.0                          # [py<=37 and build_platform != target_platform]
+        - pyarrow {{ pyarrow }}                  # [py>=38 and build_platform != target_platform]
         - numpy                                  # [build_platform != target_platform]
       host:
         - numpy
         - libtiledbvcf {{ version }}
         - python
-        - pyarrow 9.0.*
+        - pyarrow 9.0.0  # [py<=37]
+        - pyarrow  {{ pyarrow }}  # [py>=38]
         - pybind11 >=2.5
         - wheel >=0.30
         - setuptools >=18.0
@@ -75,7 +79,7 @@ outputs:
         - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.24') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
         - python
-        - pyarrow 9.0.*
+        - {{ pin_compatible('pyarrow', max_pin='x.x.x') }}
         - pandas
     imports:
       - tiledbvcf
