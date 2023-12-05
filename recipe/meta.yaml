@@ -1,6 +1,6 @@
 {% set name = "tiledb-vcf" %}
-{% set version = "0.26.6" %}
-{% set sha256 = "7baebc75c1429755f903221aac41cb63771754b6f9cdca853257937972705171" %}
+{% set version = "0.27.0" %}
+{% set sha256 = "43b2c48038a14ccf3c15e9a6a679ccc21635c990a36d45c15f7b5313abb1c477" %}
 
 package:
   name: {{ name }}
@@ -9,8 +9,6 @@ package:
 source:
   url: https://github.com/TileDB-Inc/TileDB-VCF/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    - 0001-Update-python-pybind11-to-use-c-17.patch
 
 build:
   number: 0
