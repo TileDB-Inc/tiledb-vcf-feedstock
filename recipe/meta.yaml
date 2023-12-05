@@ -9,8 +9,6 @@ package:
 source:
   url: https://github.com/TileDB-Inc/TileDB-VCF/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    - 0001-Update-python-pybind11-to-use-c-17.patch
 
 build:
   number: 0
