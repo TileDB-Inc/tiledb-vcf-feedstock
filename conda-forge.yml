@@ -10,3 +10,4 @@ azure:
   build_id: 35
   user_or_org: TileDB-Inc
   project_name: CI
+upload_on_branch: master
