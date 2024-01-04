@@ -8,9 +8,9 @@ channel_targets:
   - tiledb main
 numpy:
   - 1.21   # [not (osx and arm64) and not win]
-  - 1.24
-  - 1.24
-  - 1.24
+  - 1.22
+  - 1.22
+  - 1.22
 python:
   - 3.7.* *_cpython   # [not (osx and arm64) and not win]
   - 3.8.* *_cpython
