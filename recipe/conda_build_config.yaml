@@ -22,8 +22,8 @@ python_impl:
   - cpython
   - cpython
 pyarrow:
-  - 11.0.0
+  - 11.*
 pin_run_as_build:
   pyarrow:
-    min_pin: x.x.x
-    max_pin: x.x.x
+    min_pin: x
+    max_pin: x
