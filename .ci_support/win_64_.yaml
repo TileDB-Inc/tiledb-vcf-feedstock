@@ -7,9 +7,9 @@ channel_targets:
 cxx_compiler:
 - vs2019
 numpy:
-- '1.24'
-- '1.24'
-- '1.24'
+- '1.22'
+- '1.22'
+- '1.22'
 pin_run_as_build:
   pyarrow:
     min_pin: x
