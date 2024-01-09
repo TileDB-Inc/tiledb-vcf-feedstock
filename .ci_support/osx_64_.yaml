@@ -20,7 +20,6 @@ numpy:
 - '1.21'
 - '1.21'
 - '1.21'
-- '1.21'
 pin_run_as_build:
   pyarrow:
     min_pin: x.x.x
@@ -34,7 +33,6 @@ pyarrow:
 - 9.0.0
 python:
 - 3.10.* *_cpython
-- 3.7.* *_cpython
 - 3.8.* *_cpython
 - 3.9.* *_cpython
 target_platform:
