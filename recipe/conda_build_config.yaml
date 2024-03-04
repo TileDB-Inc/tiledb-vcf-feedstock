@@ -6,21 +6,6 @@ channel_sources:
   - conda-forge,tiledb
 channel_targets:
   - tiledb main
-numpy:
-  - 1.21   # [linux]
-  - 1.22
-  - 1.22
-  - 1.22
-python:
-  - 3.7.* *_cpython   # [linux]
-  - 3.8.* *_cpython
-  - 3.9.* *_cpython
-  - 3.10.* *_cpython
-python_impl:
-  - cpython   # [linux]
-  - cpython
-  - cpython
-  - cpython
 pyarrow:
   - 11.*
 pin_run_as_build:
