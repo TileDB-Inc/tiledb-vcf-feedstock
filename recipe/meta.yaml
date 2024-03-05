@@ -1,6 +1,6 @@
 {% set name = "tiledb-vcf" %}
-{% set version = "0.28.1" %}
-{% set sha256 = "8fd2007ab2044c950577067bad9fa3bd6a42f5e9b6b83c75409efaa5a46b19cf" %}
+{% set version = "0.29.0" %}
+{% set sha256 = "9c160f2435bff60ff53401fbb72cd9d061a8af073ab37c0e544bcf2084cfcbe7" %}
 
 package:
   name: {{ name }}
@@ -29,11 +29,11 @@ outputs:
       host:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
-        - tiledb 2.19.*
+        - tiledb 2.20.*
       run:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
-        - tiledb 2.19.*
+        - tiledb 2.20.*
     test:
       files:  # [not win]
         - test-cli.sh  # [not win]
