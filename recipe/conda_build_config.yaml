@@ -6,9 +6,3 @@ channel_sources:
   - conda-forge,tiledb
 channel_targets:
   - tiledb main
-pyarrow:
-  - 11.*
-pin_run_as_build:
-  pyarrow:
-    min_pin: x
-    max_pin: x
