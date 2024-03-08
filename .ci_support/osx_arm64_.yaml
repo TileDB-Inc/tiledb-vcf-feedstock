@@ -20,14 +20,9 @@ numpy:
 - '1.22'
 - '1.22'
 pin_run_as_build:
-  pyarrow:
-    min_pin: x
-    max_pin: x
   python:
     min_pin: x.x
     max_pin: x.x
-pyarrow:
-- 11.*
 python:
 - 3.10.* *_cpython
 - 3.11.* *_cpython
