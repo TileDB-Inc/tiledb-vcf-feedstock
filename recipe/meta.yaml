@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [linux32 or py2k]
 
 outputs:
@@ -65,7 +65,7 @@ outputs:
         - numpy
         - libtiledbvcf {{ version }}
         - python
-        - pyarrow >=14.0.2
+        - pyarrow
         - pybind11 >=2.5
         - wheel >=0.30
         - setuptools >=18.0
@@ -75,7 +75,7 @@ outputs:
         - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.24') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
         - python
-        - pyarrow >=14.0.2
+        - pyarrow
         - pandas
     imports:
       - tiledbvcf
