@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   skip: true  # [linux32 or py2k]
 
 outputs:
@@ -59,6 +59,7 @@ outputs:
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
         - pyarrow                                # [build_platform != target_platform]
+        - pyarrow-hotfix                         # [build_platform != target_platform]
         - pybind11                               # [build_platform != target_platform]
         - numpy                                  # [build_platform != target_platform]
       host:
@@ -66,6 +67,7 @@ outputs:
         - libtiledbvcf {{ version }}
         - python
         - pyarrow
+        - pyarrow-hotfix
         - pybind11 >=2.5
         - wheel >=0.30
         - setuptools >=18.0
@@ -76,6 +78,7 @@ outputs:
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
         - python
         - pyarrow
+        - pyarrow-hotfix
         - pandas
     imports:
       - tiledbvcf
