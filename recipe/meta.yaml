@@ -1,17 +1,17 @@
 {% set name = "tiledb-vcf" %}
-{% set version = "0.29.0" %}
-{% set sha256 = "9c160f2435bff60ff53401fbb72cd9d061a8af073ab37c0e544bcf2084cfcbe7" %}
+{% set version = "0.29.2" %}
+{% set sha256 = "414f4ca1de0d64f7581d49bc2520dc0cfd973184f5cd3b06ec2aafc3eca8e133" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://github.com/TileDB-Inc/TileDB-VCF/archive/{{ version }}.tar.gz
+  url: https://github.com/TileDB-Inc/TileDB-VCF/archive/refs/heads/adamwenocur/RC.zip
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   skip: true  # [linux32 or py2k]
 
 outputs:
@@ -33,7 +33,6 @@ outputs:
       run:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
-        - tiledb 2.20.*
     test:
       files:  # [not win]
         - test-cli.sh  # [not win]
