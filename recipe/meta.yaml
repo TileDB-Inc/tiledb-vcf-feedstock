@@ -32,7 +32,7 @@ outputs:
       host:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
-        - tiledb 2.22.*
+        - tiledb 2.23.*
       run:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
