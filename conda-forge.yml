@@ -5,7 +5,7 @@ github:
 build_platform:
   osx_arm64: osx_64
 conda_forge_output_validation: true
-test_on_native_only: true
+test: native_and_emulated
 azure:
   build_id: 35
   user_or_org: TileDB-Inc
