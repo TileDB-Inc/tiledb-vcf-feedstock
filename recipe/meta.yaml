@@ -81,7 +81,7 @@ outputs:
         - pip
         - scikit-build-core
       run:
-        - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.24') }}
+        - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.26') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
         - python
         - pyarrow
