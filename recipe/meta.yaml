@@ -1,5 +1,5 @@
 {% set name = "tiledb-vcf" %}
-{% set version = "0.33.0" %}
+{% set version = "0.33.2" %}
 
 package:
   name: {{ name }}
@@ -9,7 +9,7 @@ source:
   # Have to use Git tag as source so that setuptools-scm
   # can auto-configure the version number
   git_url: https://github.com/TileDB-Inc/TileDB-VCF.git
-  git_rev: {{ version }}
+  git_rev: dc39b1b96a3b04fd16251b7d2f321c660b81eab3
   git_depth: -1
 
 build:
@@ -32,7 +32,7 @@ outputs:
       host:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
-        - tiledb 2.24
+        - tiledb 2.24.*
       run:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
