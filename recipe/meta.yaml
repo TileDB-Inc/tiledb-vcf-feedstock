@@ -9,7 +9,7 @@ source:
   # Have to use Git tag as source so that setuptools-scm
   # can auto-configure the version number
   git_url: https://github.com/TileDB-Inc/TileDB-VCF.git
-  git_rev: b92fa9126cd7b1b66e0a9e9130ed25d08e6f2544
+  git_rev: 691852450d2cc9c25db778e2e11e7212b8a74709
   git_depth: -1
 
 build:
