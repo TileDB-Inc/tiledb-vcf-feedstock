@@ -29,6 +29,8 @@ outputs:
         - git
         - cmake
         - make  # [not win]
+        # Helps resolve Illegal instruction in tests
+        - libcxx <18          # [osx and x86_64]
       host:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
@@ -75,6 +77,8 @@ outputs:
         - pyarrow-hotfix                         # [build_platform != target_platform]
         - pybind11                               # [build_platform != target_platform]
         - numpy                                  # [build_platform != target_platform]
+        # Helps resolve Illegal instruction in tests
+        - libcxx <18          # [osx and x86_64]
       host:
         - numpy
         - libtiledbvcf {{ version }}
