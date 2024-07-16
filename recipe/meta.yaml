@@ -84,6 +84,8 @@ outputs:
         - setuptools_scm_git_archive
         - pip
         - scikit-build-core
+        # Helps resolve Illegal instruction in tests
+        - libcxx <18 # [osx and x86_64]
       run:
         - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.27') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
@@ -91,6 +93,8 @@ outputs:
         - pyarrow
         - pyarrow-hotfix
         - pandas
+        # Helps resolve Illegal instruction in tests
+        - libcxx <18 # [osx and x86_64]
     imports:
       - tiledbvcf
     test:
