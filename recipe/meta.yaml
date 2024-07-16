@@ -34,12 +34,12 @@ outputs:
         - m2w64-htslib >=1.15  # [win]
         - tiledb 2.24.*
         # Helps resolve Illegal instruction in tests
-        - libcxx <18 # [osx and build_platform == target_platform
+        - libcxx <18 # [osx and x86_64]
       run:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
         # Helps resolve Illegal instruction in tests
-        - libcxx <18 # [osx and build_platform == target_platform
+        - libcxx <18 # [osx and x86_64]
     test:
       files:  # [not win]
         - test-cli.sh  # [not win]
