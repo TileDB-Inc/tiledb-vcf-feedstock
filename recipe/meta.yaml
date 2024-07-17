@@ -37,15 +37,11 @@ outputs:
         - tiledb 2.24.*
         # Helps resolve Illegal instruction in tests
         - libcxx <18          # [osx and x86_64]
-        - aws-c-io 0.14.9     # [osx and x86_64]
-        - aws-crt-cpp 0.27.2  # [osx and x86_64]
-        - c-ares 1.28.1       # [osx and x86_64]
       run:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
         # Helps resolve Illegal instruction in tests
         - libcxx <18     # [osx and x86_64]
-        - c-ares 1.28.1  # [osx and x86_64]
     test:
       files:  # [not win]
         - test-cli.sh  # [not win]
