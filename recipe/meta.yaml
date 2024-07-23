@@ -14,7 +14,7 @@ source:
 
 build:
   number: 1
-  skip: true  # [linux32 or py2k]
+  skip: true  # [not osx]
 
 outputs:
   - name: libtiledbvcf
@@ -29,19 +29,13 @@ outputs:
         - git
         - cmake
         - make  # [not win]
-        # Helps resolve Illegal instruction in tests
-        - libcxx <18          # [osx and x86_64]
       host:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
         - tiledb 2.24.*
-        # Helps resolve Illegal instruction in tests
-        - libcxx <18          # [osx and x86_64]
       run:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
-        # Helps resolve Illegal instruction in tests
-        - libcxx <18     # [osx and x86_64]
     test:
       files:  # [not win]
         - test-cli.sh  # [not win]
@@ -73,8 +67,6 @@ outputs:
         - pyarrow-hotfix                         # [build_platform != target_platform]
         - pybind11                               # [build_platform != target_platform]
         - numpy                                  # [build_platform != target_platform]
-        # Helps resolve Illegal instruction in tests
-        - libcxx <18          # [osx and x86_64]
       host:
         - numpy
         - libtiledbvcf {{ version }}
@@ -88,8 +80,6 @@ outputs:
         - setuptools_scm_git_archive
         - pip
         - scikit-build-core
-        # Helps resolve Illegal instruction in tests
-        - libcxx <18          # [osx and x86_64]
       run:
         - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.27') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
@@ -97,8 +87,6 @@ outputs:
         - pyarrow
         - pyarrow-hotfix
         - pandas
-        # Helps resolve Illegal instruction in tests
-        - libcxx <18     # [osx and x86_64]
     imports:
       - tiledbvcf
     test:
@@ -124,5 +112,3 @@ extra:
     - ihnorton
     - shelnutt2
     - jdblischak
-
-# touch to re-force CI (re-run button not working, IDK why)

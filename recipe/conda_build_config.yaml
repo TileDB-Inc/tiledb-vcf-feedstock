@@ -3,6 +3,6 @@ MACOSX_SDK_VERSION:  # [osx and x86_64]
 c_stdlib_version:  # [osx and x86_64]
   - "10.15"                # [osx and x86_64]
 channel_sources:
-  - conda-forge,tiledb
+  - conda-forge/label/libcxx_dev,conda-forge,tiledb
 channel_targets:
   - tiledb main
