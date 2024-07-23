@@ -34,13 +34,6 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64</td>
-              <td>
-                <a href="https://dev.azure.com/TileDB-Inc/CI/_build/latest?definitionId=35&branchName=master">
-                  <img src="https://dev.azure.com/TileDB-Inc/CI/_apis/build/status/tiledb-vcf-feedstock?branchName=master&jobName=linux&configuration=linux%20linux_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/TileDB-Inc/CI/_build/latest?definitionId=35&branchName=master">
@@ -52,13 +45,6 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/TileDB-Inc/CI/_build/latest?definitionId=35&branchName=master">
                   <img src="https://dev.azure.com/TileDB-Inc/CI/_apis/build/status/tiledb-vcf-feedstock?branchName=master&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64</td>
-              <td>
-                <a href="https://dev.azure.com/TileDB-Inc/CI/_build/latest?definitionId=35&branchName=master">
-                  <img src="https://dev.azure.com/TileDB-Inc/CI/_apis/build/status/tiledb-vcf-feedstock?branchName=master&jobName=win&configuration=win%20win_64_" alt="variant">
                 </a>
               </td>
             </tr>
