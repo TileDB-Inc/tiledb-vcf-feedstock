@@ -1,5 +1,5 @@
 {% set name = "tiledb-vcf" %}
-{% set version = "0.33.3" %}
+{% set version = "0.34.0" %}
 
 package:
   name: {{ name }}
@@ -34,7 +34,7 @@ outputs:
       host:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
-        - tiledb 2.24.*
+        - tiledb 2.25.*
         # Helps resolve Illegal instruction in tests
         - libcxx <18          # [osx and x86_64]
       run:
