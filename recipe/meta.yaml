@@ -79,7 +79,8 @@ outputs:
         - numpy
         - libtiledbvcf {{ version }}
         - python
-        - pyarrow
+        - pyarrow <13                            # [osx]
+        - pyarrow                                # [not osx]
         - pyarrow-hotfix
         - pybind11 >=2.5
         - wheel >=0.30
