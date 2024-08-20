@@ -1,5 +1,5 @@
 {% set name = "tiledb-vcf" %}
-{% set version = "0.34.1" %}
+{% set version = "0.34.2" %}
 
 package:
   name: {{ name }}
@@ -13,7 +13,7 @@ source:
   git_depth: -1
 
 build:
-  number: 2
+  number: 0
   skip: true  # [linux32 or py2k]
 
 outputs:
