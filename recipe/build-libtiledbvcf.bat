@@ -9,7 +9,6 @@ cmake ^
   -DOVERRIDE_INSTALL_PREFIX=OFF ^
   -DCMAKE_BUILD_TYPE=Release ^
   -DFORCE_EXTERNAL_HTSLIB=OFF ^
-  -DCMAKE_CXX_FLAGS="/utf-8" ^
   ../libtiledbvcf
 if %ERRORLEVEL% neq 0 exit 1
 
