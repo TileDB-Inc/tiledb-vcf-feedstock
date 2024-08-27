@@ -1,5 +1,5 @@
 {% set name = "tiledb-vcf" %}
-{% set version = "0.34.2" %}
+{% set version = "0.34.3" %}
 
 package:
   name: {{ name }}
@@ -9,7 +9,7 @@ source:
   # Have to use Git tag as source so that setuptools-scm
   # can auto-configure the version number
   git_url: https://github.com/TileDB-Inc/TileDB-VCF.git
-  git_rev: {{ version }}
+  git_rev: gspowley/remove-pins
   git_depth: -1
 
 build:
@@ -81,7 +81,7 @@ outputs:
         - pip
         - scikit-build-core
       run:
-        - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.27') }}
+        - {{ pin_compatible('numpy', lower_bound='2.0', upper_bound='2.1') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
         - python
         - pyarrow
