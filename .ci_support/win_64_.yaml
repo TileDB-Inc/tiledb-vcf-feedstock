@@ -17,6 +17,9 @@ pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
+  fmt:
+    min_pin: 11
+    max_pin: 11
 python:
 - 3.10.* *_cpython
 - 3.11.* *_cpython
