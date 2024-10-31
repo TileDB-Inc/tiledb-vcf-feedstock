@@ -5,7 +5,7 @@ MACOSX_SDK_VERSION:
 c_compiler:
 - clang
 c_compiler_version:
-- '16'
+- '18'
 c_stdlib:
 - macosx_deployment_target
 c_stdlib_version:
@@ -17,14 +17,13 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '16'
+- '18'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 numpy:
 - '1.22'
 - '1.23'
 - '1.26'
-- '1.22'
 - '1.22'
 pin_run_as_build:
   python:
@@ -34,7 +33,6 @@ python:
 - 3.10.* *_cpython
 - 3.11.* *_cpython
 - 3.12.* *_cpython
-- 3.8.* *_cpython
 - 3.9.* *_cpython
 target_platform:
 - osx-64
