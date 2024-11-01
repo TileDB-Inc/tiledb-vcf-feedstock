@@ -1,5 +1,5 @@
 {% set name = "tiledb-vcf" %}
-{% set version = "0.35.0" %}
+{% set version = "0.36.0" %}
 
 package:
   name: {{ name }}
@@ -81,7 +81,6 @@ outputs:
         - pip
         - scikit-build-core
       run:
-        - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.27') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
         - python
         - pyarrow
