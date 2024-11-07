@@ -6,7 +6,3 @@ channel_sources:
   - conda-forge,tiledb
 channel_targets:
   - tiledb main
-c_compiler_version:  # [osx]
-- '16'  # [osx]
-cxx_compiler_version:  # [osx]
-- '16'  # [osx]
