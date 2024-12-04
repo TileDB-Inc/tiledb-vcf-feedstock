@@ -2,8 +2,6 @@
 
 set -exo pipefail
 
-mkdir libtiledbvcf-build && cd libtiledbvcf-build
-
 # wrap CXX compiler to remove problematic args
 export NN_CXX_ORIG=$CXX
 export CXX="${RECIPE_DIR}/cxx_wrap.sh"
@@ -19,6 +17,3 @@ cmake -S libtiledbvcf -B build \
 cmake --build build --config Release
 
 cmake --install build --config Release
-
-# Cleanup
-cd ../ && rm -r libtiledbvcf-build
