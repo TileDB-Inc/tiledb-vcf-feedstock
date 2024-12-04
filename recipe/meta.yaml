@@ -1,5 +1,5 @@
 {% set name = "tiledb-vcf" %}
-{% set version = "db/vcpkg" %}
+{% set version = "dbvcpkg" %}
 
 package:
   name: {{ name }}
