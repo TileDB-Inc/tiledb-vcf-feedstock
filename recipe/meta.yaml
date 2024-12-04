@@ -29,6 +29,7 @@ outputs:
         - git
         - cmake
         - make  # [not win]
+        - htslib >=1.15  # [not win]
       host:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
