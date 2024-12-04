@@ -2,5 +2,6 @@
 
 set -ex
 
-export LIBTILEDBVCF_PATH=$PREFIX/lib/
-$PYTHON -m pip install --no-deps --no-build-isolation -v apis/python
+pip install -v --no-deps . \
+  --config-settings=cmake.define.TILEDBVCF_ONLY_PYTHON_BINDINGS=ON \
+  --config-settings=cmake.define.TILEDBVCF_SET_RPATH=OFF
