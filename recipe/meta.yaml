@@ -28,6 +28,7 @@ outputs:
         - {{ stdlib("c") }}
         - git
         - cmake
+        - pkg-config
         - make  # [not win]
         - htslib >=1.15  # [not win]
       host:
@@ -66,7 +67,6 @@ outputs:
         - {{ stdlib("c") }}
         - cmake
         - make  # [not win]
-        - pkg-config
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
         - pyarrow                                # [build_platform != target_platform]
