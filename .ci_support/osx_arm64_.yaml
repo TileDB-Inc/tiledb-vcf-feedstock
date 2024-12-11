@@ -36,8 +36,12 @@ python:
 - 3.9.* *_cpython
 target_platform:
 - osx-arm64
+tiledb:
+- '2.26'
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
 - - python
   - numpy
+zlib:
+- '1'
