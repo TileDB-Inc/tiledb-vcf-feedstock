@@ -35,7 +35,7 @@ outputs:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
         - tiledb 2.26.*
-        - spdlog
+        - spdlog >=1.14.1,<1.15.0a0
         - fmt
         - cli11
         - zlib
