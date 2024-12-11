@@ -8,6 +8,8 @@ channel_targets:
 - tiledb main
 cxx_compiler:
 - vs2019
+fmt:
+- '10'
 numpy:
 - '2.0'
 - '2.0'
@@ -22,8 +24,14 @@ python:
 - 3.11.* *_cpython
 - 3.12.* *_cpython
 - 3.9.* *_cpython
+spdlog:
+- '1.13'
 target_platform:
 - win-64
+tiledb:
+- '2.26'
 zip_keys:
 - - python
   - numpy
+zlib:
+- '1'
