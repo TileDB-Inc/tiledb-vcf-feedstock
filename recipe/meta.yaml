@@ -1,5 +1,5 @@
 {% set name = "tiledb-vcf" %}
-{% set version = "0.36.0" %}
+{% set version = "0.37.0" %}
 
 package:
   name: {{ name }}
@@ -32,7 +32,7 @@ outputs:
       host:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
-        - tiledb 2.26.*
+        - tiledb 2.27.*
       run:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
@@ -76,7 +76,7 @@ outputs:
         - pybind11 >=2.5
         - wheel >=0.30
         - setuptools >=18.0
-        - setuptools_scm >=6.0.1
+        - setuptools_scm >=8.1.0
         - setuptools_scm_git_archive
         - pip
         - scikit-build-core
