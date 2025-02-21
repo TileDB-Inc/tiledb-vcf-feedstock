@@ -1,5 +1,5 @@
 {% set name = "tiledb-vcf" %}
-{% set version = "0.37.0" %}
+{% set version = "dbvcpkg" %}
 
 package:
   name: {{ name }}
@@ -8,7 +8,7 @@ package:
 source:
   # Have to use Git tag as source so that setuptools-scm
   # can auto-configure the version number
-  git_url: https://github.com/TileDB-Inc/TileDB-VCF.git
+  git_url: https://github.com/dudoslav/TileDB-VCF.git
   git_rev: {{ version }}
   git_depth: -1
 
@@ -28,11 +28,17 @@ outputs:
         - {{ stdlib("c") }}
         - git
         - cmake
+        - pkg-config
         - make  # [not win]
+        - htslib >=1.15  # [not win]
       host:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
-        - tiledb 2.27.*
+        - tiledb 2.26.*
+        - spdlog >=1.14.1,<1.15.0a0
+        - fmt >=11.0.2,<12.0a0
+        - cli11
+        - zlib
       run:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
