@@ -3,7 +3,7 @@ c_compiler:
 c_stdlib:
 - vs
 channel_sources:
-- conda-forge,tiledb
+- tiledb/label/for-cloud,conda-forge,tiledb
 channel_targets:
 - tiledb main
 cxx_compiler:

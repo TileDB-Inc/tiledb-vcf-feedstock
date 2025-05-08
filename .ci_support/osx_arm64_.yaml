@@ -11,7 +11,7 @@ c_stdlib:
 c_stdlib_version:
 - '11.0'
 channel_sources:
-- conda-forge,tiledb
+- tiledb/label/for-cloud,conda-forge,tiledb
 channel_targets:
 - tiledb main
 cxx_compiler:
