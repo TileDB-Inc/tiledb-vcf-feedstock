@@ -12,7 +12,7 @@ source .scripts/logging_utils.sh
 set -xeo pipefail
 
 THISDIR="$( cd "$( dirname "$0" )" >/dev/null && pwd )"
-PROVIDER_DIR="$(basename $THISDIR)"
+PROVIDER_DIR="$(basename "$THISDIR")"
 
 FEEDSTOCK_ROOT="$( cd "$( dirname "$0" )/.." >/dev/null && pwd )"
 RECIPE_ROOT="${FEEDSTOCK_ROOT}/recipe"
@@ -101,8 +101,6 @@ docker run ${DOCKER_RUN_ARGS} \
            -e remote_url \
            -e sha \
            -e BINSTAR_TOKEN \
-           -e FEEDSTOCK_TOKEN \
-           -e STAGING_BINSTAR_TOKEN \
            "${DOCKER_IMAGE}" \
            bash \
            "/home/conda/feedstock_root/${PROVIDER_DIR}/build_steps.sh"
