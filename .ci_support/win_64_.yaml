@@ -9,10 +9,7 @@ channel_targets:
 cxx_compiler:
 - vs2019
 numpy:
-- '2.0'
-- '2.0'
-- '2.0'
-- '2.0'
+- '2'
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -26,6 +23,3 @@ target_platform:
 - win-64
 tiledb:
 - '2.27'
-zip_keys:
-- - python
-  - numpy
