@@ -111,5 +111,4 @@ extra:
     - ihnorton
     - shelnutt2
     - jdblischak
-
-# touch to re-force CI (re-run button not working, IDK why)
+    - alancleary
