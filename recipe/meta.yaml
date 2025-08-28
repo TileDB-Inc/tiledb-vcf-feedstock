@@ -33,6 +33,7 @@ outputs:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
         - tiledb 2.28.*
+        - spdlog
       run:
         - htslib >=1.15  # [not win]
         - m2w64-htslib >=1.15  # [win]
@@ -41,6 +42,9 @@ outputs:
         - test-cli.sh  # [not win]
       commands:
         - tiledbvcf version
+        # Report dynamic linking
+        - ldd ${PREFIX}/lib/libtiledbvcf.so  # [linux]
+        - otool -L ${PREFIX}/lib/libtiledbvcf.dylib  # [osx]
         # verify libhts is linked
         - ldd ${PREFIX}/lib/libtiledbvcf.so | grep libhts  # [linux]
         - otool -L ${PREFIX}/lib/libtiledbvcf.dylib | grep libhts  # [osx]
