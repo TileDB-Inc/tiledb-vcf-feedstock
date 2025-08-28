@@ -13,6 +13,7 @@ cmake \
   -DOVERRIDE_INSTALL_PREFIX=OFF \
   -DCMAKE_BUILD_TYPE=Release \
   -DFORCE_EXTERNAL_HTSLIB=OFF \
+  -DFORCE_EXTERNAL_SPDLOG=OFF \
   ../libtiledbvcf
 
 make -j ${CPU_COUNT}
