@@ -1,5 +1,5 @@
 c_compiler:
-- vs2019
+- vs2022
 c_stdlib:
 - vs
 channel_sources:
@@ -7,7 +7,7 @@ channel_sources:
 channel_targets:
 - tiledb main
 cxx_compiler:
-- vs2019
+- vs2022
 numpy:
 - '2'
 pin_run_as_build:
@@ -22,4 +22,4 @@ python:
 target_platform:
 - win-64
 tiledb:
-- '2.27'
+- '2.28'
