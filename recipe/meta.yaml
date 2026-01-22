@@ -85,7 +85,7 @@ outputs:
         - python
         - pyarrow
         - pyarrow-hotfix
-        - pandas
+        - pandas <3
     imports:
       - tiledbvcf
     test:
