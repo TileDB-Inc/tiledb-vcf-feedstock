@@ -1,0 +1,13 @@
+#!/bin/bash
+# Source the global build setup as normal
+source run_conda_forge_build_setup
+
+# Workaround for https://github.com/conda-forge/rsync-feedstock/issues/43
+# rsync 3.4.1 build_3 has broken @rpath resolution when hard-linked from
+# the pkgs cache, causing cross-python activation to fail with
+# "Library not loaded: @rpath/libpopt.0.dylib".
+# Force conda to copy instead of hard-link so @loader_path resolves to
+# the build environment where libpopt is co-located with rsync.
+if [[ "${HOST_PLATFORM}" != "${BUILD_PLATFORM}" ]]; then
+    export CONDA_ALWAYS_COPY=1
+fi
