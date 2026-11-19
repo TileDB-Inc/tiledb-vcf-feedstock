@@ -20,7 +20,14 @@ Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>GitHub Actions</td>
+    <td>
+      <a href="https://github.com/TileDB-Inc/tiledb-vcf-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/TileDB-Inc/tiledb-vcf-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=master">
+      </a>
+    </td>
+  </tr>
     
   <tr>
     <td>Azure</td>
@@ -34,31 +41,10 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64</td>
-              <td>
-                <a href="https://dev.azure.com/TileDB-Inc/CI/_build/latest?definitionId=35&branchName=master">
-                  <img src="https://dev.azure.com/TileDB-Inc/CI/_apis/build/status/tiledb-vcf-feedstock?branchName=master&jobName=linux&configuration=linux%20linux_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/TileDB-Inc/CI/_build/latest?definitionId=35&branchName=master">
                   <img src="https://dev.azure.com/TileDB-Inc/CI/_apis/build/status/tiledb-vcf-feedstock?branchName=master&jobName=osx&configuration=osx%20osx_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64</td>
-              <td>
-                <a href="https://dev.azure.com/TileDB-Inc/CI/_build/latest?definitionId=35&branchName=master">
-                  <img src="https://dev.azure.com/TileDB-Inc/CI/_apis/build/status/tiledb-vcf-feedstock?branchName=master&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64</td>
-              <td>
-                <a href="https://dev.azure.com/TileDB-Inc/CI/_build/latest?definitionId=35&branchName=master">
-                  <img src="https://dev.azure.com/TileDB-Inc/CI/_apis/build/status/tiledb-vcf-feedstock?branchName=master&jobName=win&configuration=win%20win_64_" alt="variant">
                 </a>
               </td>
             </tr>
@@ -87,31 +73,73 @@ conda config --add channels tiledb
 conda config --set channel_priority strict
 ```
 
-Once the `tiledb` channel has been enabled, `libtiledbvcf, tiledbvcf-py` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install libtiledbvcf tiledbvcf-py
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install libtiledbvcf tiledbvcf-py
 ```
 
-It is possible to list all of the versions of `libtiledbvcf` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add libtiledbvcf tiledbvcf-py
+# for installing globally
+pixi global install libtiledbvcf tiledbvcf-py
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `libtiledbvcf` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search libtiledbvcf --channel tiledb
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search libtiledbvcf --channel tiledb
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search libtiledbvcf --channel tiledb
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -123,6 +151,8 @@ mamba repoquery whoneeds libtiledbvcf --channel tiledb
 # List dependencies of `libtiledbvcf`:
 mamba repoquery depends libtiledbvcf --channel tiledb
 ```
+
+</details>
 
 
 

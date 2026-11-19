@@ -13,7 +13,7 @@ source:
   git_depth: -1
 
 build:
-  number: 0
+  number: 1
   skip: true  # [linux32 or py2k]
 
 outputs:
