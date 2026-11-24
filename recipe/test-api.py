@@ -4,7 +4,8 @@ import tiledbvcf
 
 ds = tiledbvcf.Dataset(
   uri = "s3://tiledb-inc-demo-data/tiledbvcf-arrays/v4/vcf-samples-20",
-  mode = "r"
+  mode = "r",
+  tiledb_config = {"vfs.s3.region": "us-east-1"}
 )
 
 x = ds.read(
